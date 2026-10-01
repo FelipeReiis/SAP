@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('agendamentos', function (Blueprint $table) {
             $table->id();
             $table->string('status', 10);
-            $table->string('idempotency_key', 100)->unique();
+            $table->string('id_empotency_key', 100)->unique();
             $table->unsignedInteger('perito_id')->nullable();
             $table->foreign('perito_id')->references('id')->on('peritos')->onDelete('cascade');
             $table->unsignedInteger('servidor_id')->nullable();
             $table->foreign('servidor_id')->references('id')->on('servidors')->onDelete('cascade');
             $table->unsignedInteger('disponibilidade_id')->nullable();
-            $table->foreign('disponibilidade_id')->references('id')->on('a')->onDelete('cascade');
+            $table->foreign('disponibilidade_id')->references('id')->on('horario_disponivels')->onDelete('cascade');
             $table->timestamps();
         });
     }
