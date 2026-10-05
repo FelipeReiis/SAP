@@ -3,8 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class StoreServidorRequest extends FormRequest
+class UpdateServidorRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,8 +24,8 @@ class StoreServidorRequest extends FormRequest
     {
         return [
             'nome' => ['required', 'string', 'max:60'],
-            'cpf' => ['required', 'string', 'max:11'],
-            'email' => ['required', 'email', 'max:60']
+            'cpf' => ['required', 'string', 'max:11', Rule::unique('servidors', 'cpf')->ignore($this->route('servidor'))],
+            'email' => ['required', 'email', 'max:60', Rule::unique('servidors', 'email')->ignore($this->route('servidor'))],
         ];
     }
 }

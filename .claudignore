@@ -1,0 +1,29 @@
+
+# Cache de Inicialização e Configurações
+bootstrap/cache/*
+!bootstrap/cache/.gitignore
+
+# Armazenamento e Compilações (Sessões, Logs e Views)
+storage/framework/cache/data/*
+storage/framework/views/*.php
+storage/framework/sessions/*
+storage/framework/testing/*
+storage/logs/*.log
+
+# Banco de dados local (se usar SQLite)
+database/*.sqlite
+
+# Dependências do Front-end (se usar Breeze, Jetstream ou Livewire)
+public/build/
+public/hot
+public/storage
+resources/css/app.css
+resources/js/app.js
+
+# --- DEPENDÊNCIAS DE BACK-END e IDE ---
+vendor/
+node_modules/
+.env
+.env.*
+.phpunit.cache/
+.vscode/

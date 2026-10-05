@@ -8,7 +8,7 @@
         public function store(array $servidor){
             $servidor = Servidor::create($servidor);
 
-            return true;
+            return Servidor::create($servidor);
         }
 
         public function show($id){
@@ -17,11 +17,11 @@
             return $servidor;
         }
 
-        public function update(array $servidor){
-            $servidor = Servidor::findOrFail($servidor['id']);
-            $servidor = $servidor->update($servidor);
+        public function update(Servidor $servidor, array $dados): Servidor
+        {
+            $servidor->update($dados);
 
-            return true;
+            return $servidor->refresh();
         }
 
     }
