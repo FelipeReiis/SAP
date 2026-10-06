@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreServidorRequest extends FormRequest
+class StorePeritoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,8 +23,8 @@ class StoreServidorRequest extends FormRequest
     {
         return [
             'nome' => ['required', 'string', 'max:60'],
-            'cpf' => ['required', 'string', 'max:11', 'unique:servidors,cpf'],
-            'email' => ['required', 'email', 'max:60', 'unique:servidors,email'],
+            'especialidade' => ['required', 'string', 'max:40'],
+            'ativo' => ['required', 'boolean'],
         ];
     }
 }

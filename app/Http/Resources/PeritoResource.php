@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ServidorResource extends JsonResource
+class PeritoResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,8 +17,8 @@ class ServidorResource extends JsonResource
         return [
             'id' => $this->id,
             'nome' => $this->nome,
-            'email' => $this->email,
-            'cpf' => $this->cpf
+            'especialidade' => $this->especialidade,
+            'ativo' => $this->ativo
         ];
     }
 }

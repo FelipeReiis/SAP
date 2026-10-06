@@ -6,8 +6,6 @@
     class ServidorService{
 
         public function store(array $servidor){
-            $servidor = Servidor::create($servidor);
-
             return Servidor::create($servidor);
         }
 
